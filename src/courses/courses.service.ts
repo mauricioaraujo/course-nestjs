@@ -24,9 +24,9 @@ export class CoursesService {
                 `Course #${id} not found`, 
                 HttpStatus.NOT_FOUND,
                 )
-        }else {
-            return this.courses.find((course) => course.id == Number(id));
         }
+
+        return course;
     }
 
     create(createCourseDto: any) {

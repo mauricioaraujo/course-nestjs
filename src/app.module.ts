@@ -13,7 +13,8 @@ import { CoursesModule } from './courses/courses.module';
     password: 'docker',
     database: 'postgres',
     autoLoadEntities: true,
-    synchronize: true,
+    synchronize: true, //Não deve ser usado em produção, 
+    // pois essa propriedade apaga para recriar dados.
   })],
   controllers: [AppController],
   providers: [AppService],

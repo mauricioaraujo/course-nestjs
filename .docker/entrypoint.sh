@@ -1,9 +1,9 @@
 #!/bin/bash
 
-npm install --legacy-peer-deps
+npm install
 
 npm run build
 
-npx typeorm migration:run -d dist/database.providers.js
+npx typeorm migration:run
 
 npm run start:dev

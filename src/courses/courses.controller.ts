@@ -20,7 +20,7 @@ export class CoursesController {
     @Post()
     create(@Body() createCourseDto: CreateCourseDto) {
         return this.coursesService.create(createCourseDto);
-    }
+    } 
 
     @Patch(':id')
     update(@Param('id') id: string, @Body() updateCourseDto: UpdateCourseDto) {

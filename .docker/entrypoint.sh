@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-npm install
+npm install --legacy-peer-deps
 
 npm run build
 

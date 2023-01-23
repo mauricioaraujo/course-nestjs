@@ -12,9 +12,9 @@ export class Course {
     @Column()
     description: string;
 
-    @JoinTable()
-    @ManyToMany(() => Tag, (tag) => tag.courses, {
-        cascade: true,
-    })
+    // @JoinTable()
+    // @ManyToMany(() => Tag, (tag) => tag.courses, {
+    //     cascade: true,
+    // })
     tags: Tag[];
 }

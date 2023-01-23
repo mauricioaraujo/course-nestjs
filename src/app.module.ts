@@ -13,7 +13,7 @@ import { CoursesModule } from './courses/courses.module';
     password: 'docker',
     database: 'cursonestjs',
     autoLoadEntities: true,
-    synchronize: true, //Não deve ser usado em produção, 
+    synchronize: false, //Não deve ser usado (true) em produção, 
     // pois essa propriedade apaga para recriar dados.
   })],
   controllers: [AppController],

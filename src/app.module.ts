@@ -12,7 +12,7 @@ import { CoursesModule } from './courses/courses.module';
     username: 'postgres',
     password: 'docker',
     database: 'cursonestjs',
-    entities: [__dirname + '/**/*.entity.ts'],
+    entities: [__dirname + '/**/*.entity.js'],
     autoLoadEntities: false,
     synchronize: false, //Não deve ser usado (true) em produção, 
     // pois essa propriedade apaga para recriar dados.

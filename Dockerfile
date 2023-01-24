@@ -1,13 +1,12 @@
-
 FROM node:18.12-alpine3.16
-
-WORKDIR /home/node/app
 
 RUN apk add
 
 RUN npm install -g @nestjs/cli
 
 USER node
+
+WORKDIR /home/node/app
 
 COPY . /home/node/app
 

@@ -1,22 +1,11 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CoursesModule } from './courses/courses.module';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
-  imports: [CoursesModule, TypeOrmModule.forRoot( {
-    type: 'postgres',
-    host: 'db',
-    port: 5432,
-    username: 'postgres',
-    password: 'docker',
-    database: 'cursonestjs',
-    entities: [__dirname + '/**/*.entity.js'],
-    autoLoadEntities: false,
-    synchronize: false, //Não deve ser usado (true) em produção, 
-    // pois essa propriedade apaga para recriar dados.
-  })],
+  imports: [CoursesModule, DatabaseModule],
   controllers: [AppController],
   providers: [AppService],
 })

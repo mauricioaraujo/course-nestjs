@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 @Entity('tags')
 export class Tag {
     @PrimaryGeneratedColumn('uuid')
-    id: number;
+    id: string;
 
     @Column()
     name: string;

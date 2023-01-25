@@ -36,7 +36,7 @@ export class CoursesService {
 
     async create(createCourseDto: CreateCourseDto) {
         const tags = await Promise.all(
-            createCourseDto.tags.map((name) => this.preLoadTagByName(name)),
+            createCourseDto.tags.map((name) => this.preloadTagByName(name)),
         );
 
         const course = this.courseRepository.create({
@@ -50,11 +50,11 @@ export class CoursesService {
         const tags = 
         updateCourseDto.tags && (
         await Promise.all(
-            updateCourseDto.tags.map((name) => this.preLoadTagByName(name)),
+            updateCourseDto.tags.map((name) => this.preloadTagByName(name)),
         ));
 
         const course = await this.courseRepository.preload({
-            id: +id,
+            id: id,
             ...updateCourseDto,
             tags,
         });
@@ -76,7 +76,7 @@ export class CoursesService {
         return this.courseRepository.remove(course);
     }
 
-    private async preLoadTagByName(name: string): Promise<Tag> {
+    private async preloadTagByName(name: string): Promise<Tag> {
         const tag = await this.tagRepository.findOne({ name });
 
         if (tag){

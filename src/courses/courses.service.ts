@@ -28,7 +28,7 @@ export class CoursesService {
         });
         
         if (!course) {
-            throw new NotFoundException(`Course #${id} not found`)
+            throw new NotFoundException(`Course ID ${id} not found`)
         }
 
         return course;

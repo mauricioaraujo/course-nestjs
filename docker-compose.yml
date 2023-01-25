@@ -12,18 +12,18 @@ services:
     depends_on:
       - db
 
-  # db:
-  #   build: .docker/postgres
-  #   container_name: cursonestjs-db
-  #   restart: always
-  #   tty: true
-  #   ports:
-  #     - "5432:5432"
-  #   volumes:
-  #     - .docker/dbdata:/var/lib/postgresql/data
-  #   environment:
-  #     - POSTGRES_PASSWORD=docker
-  #     - POSTGRES_DB=cursonestjs
+  db:
+    build: .docker/postgres
+    container_name: cursonestjs-db
+    restart: always
+    tty: true
+    ports:
+      - "5432:5432"
+    volumes:
+      - .docker/dbdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=cursonestjs
 
   # dbtest:
   #   build: .docker/postgres

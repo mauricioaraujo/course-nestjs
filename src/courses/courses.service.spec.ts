@@ -10,7 +10,7 @@ describe('CoursesService', () => {
 
   beforeEach(async () => {
     service = new CoursesService();
-    id = ''; //Precisa informar um uuid válido que pode ser observado no insomnia
+    id = 'e2c86701-6851-4e60-bc21-d73895e7fbeb'; //Precisa informar um uuid válido que pode ser observado no insomnia
     date = new Date();
   });
 
